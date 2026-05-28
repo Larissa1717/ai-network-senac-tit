@@ -1,0 +1,114 @@
+wslinux01
+---
+
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.4 LTS
+Release:        24.04
+Codename:       noble
+---
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:0c:8f:ba brd ff:ff:ff:ff:ff:ff
+    inet 10.24.82.219/24 brd 10.24.82.255 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet 10.24.82.47/24 metric 100 brd 10.24.82.255 scope global secondary dynamic enp0s3
+       valid_lft 27762sec preferred_lft 27762sec
+---
+
+default via 10.24.82.1 dev enp0s3 proto static
+default via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.195 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.242 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.40.190 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.82.0/24 dev enp0s3 proto kernel scope link src 10.24.82.219
+10.24.82.1 dev enp0s3 proto dhcp scope link src 10.24.82.47 metric 100
+---
+
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: stub
+
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 8.8.8.8 8.8.4.4 10.24.40.190 10.1.1.195 10.1.1.242
+        DNS Domain: senac.br senacsp.edu.br
+---
+
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  162u  IPv4   7005      0t0  TCP *:22 (LISTEN)
+systemd-n  548 systemd-network   19u  IPv4  13962      0t0  UDP 10.24.82.47:68
+systemd-r  557 systemd-resolve   14u  IPv4   6594      0t0  UDP 127.0.0.53:53
+systemd-r  557 systemd-resolve   15u  IPv4   6595      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  557 systemd-resolve   16u  IPv4   6596      0t0  UDP 127.0.0.54:53
+systemd-r  557 systemd-resolve   17u  IPv4   6597      0t0  TCP 127.0.0.54:53 (LISTEN)
+node_expo  716   node_exporter    3u  IPv6   9753      0t0  TCP *:9100 (LISTEN)
+node_expo  716   node_exporter    6u  IPv6  17338      0t0  TCP 127.0.0.1:9100->127.0.0.1:54592 (ESTABLISHED)
+prometheu  727      prometheus    6u  IPv6  10097      0t0  TCP *:9091 (LISTEN)
+prometheu  727      prometheus    8u  IPv6  16258      0t0  TCP 127.0.0.1:9091->127.0.0.1:44790 (ESTABLISHED)
+prometheu  727      prometheus   11u  IPv4  17412      0t0  TCP 127.0.0.1:54592->127.0.0.1:9100 (ESTABLISHED)
+prometheu  727      prometheus   16u  IPv4  16257      0t0  TCP 127.0.0.1:44790->127.0.0.1:9091 (ESTABLISHED)
+apache2    773            root    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2    773            root    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+java       822          tomcat   44u  IPv6   9195      0t0  TCP *:8080 (LISTEN)
+mysqld     944           mysql   21u  IPv6  10163      0t0  TCP *:33060 (LISTEN)
+mysqld     944           mysql   37u  IPv4  10165      0t0  TCP *:3306 (LISTEN)
+apache2   1036        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1036        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1038        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1038        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1039        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1039        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1042        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1042        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1043        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1043        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+grafana   1138         grafana   13u  IPv6  10305      0t0  TCP *:3000 (LISTEN)
+sshd      2516            root    3u  IPv4   7005      0t0  TCP *:22 (LISTEN)
+sshd      2549            root    4u  IPv4  18954      0t0  TCP 10.24.82.219:22->10.24.82.30:55952 (ESTABLISHED)
+sshd      2648           senac    4u  IPv4  18954      0t0  TCP 10.24.82.219:22->10.24.82.30:55952 (ESTABLISHED)
+---
+
+
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  162u  IPv4   7005      0t0  TCP *:22 (LISTEN)
+systemd-n  548 systemd-network   19u  IPv4  13962      0t0  UDP 10.24.82.47:68
+systemd-r  557 systemd-resolve   14u  IPv4   6594      0t0  UDP 127.0.0.53:53
+systemd-r  557 systemd-resolve   15u  IPv4   6595      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  557 systemd-resolve   16u  IPv4   6596      0t0  UDP 127.0.0.54:53
+systemd-r  557 systemd-resolve   17u  IPv4   6597      0t0  TCP 127.0.0.54:53 (LISTEN)
+node_expo  716   node_exporter    3u  IPv6   9753      0t0  TCP *:9100 (LISTEN)
+node_expo  716   node_exporter    6u  IPv6  17338      0t0  TCP 127.0.0.1:9100->127.0.0.1:54592 (ESTABLISHED)
+prometheu  727      prometheus    6u  IPv6  10097      0t0  TCP *:9091 (LISTEN)
+prometheu  727      prometheus    8u  IPv6  16258      0t0  TCP 127.0.0.1:9091->127.0.0.1:44790 (ESTABLISHED)
+prometheu  727      prometheus   11u  IPv4  17412      0t0  TCP 127.0.0.1:54592->127.0.0.1:9100 (ESTABLISHED)
+prometheu  727      prometheus   16u  IPv4  16257      0t0  TCP 127.0.0.1:44790->127.0.0.1:9091 (ESTABLISHED)
+apache2    773            root    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2    773            root    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+java       822          tomcat   44u  IPv6   9195      0t0  TCP *:8080 (LISTEN)
+mysqld     944           mysql   21u  IPv6  10163      0t0  TCP *:33060 (LISTEN)
+mysqld     944           mysql   37u  IPv4  10165      0t0  TCP *:3306 (LISTEN)
+apache2   1036        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1036        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1038        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1038        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1039        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1039        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1042        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1042        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+apache2   1043        www-data    3u  IPv4   8221      0t0  TCP *:80 (LISTEN)
+apache2   1043        www-data    4u  IPv4   8223      0t0  TCP *:8888 (LISTEN)
+grafana   1138         grafana   13u  IPv6  10305      0t0  TCP *:3000 (LISTEN)
+sshd      2516            root    3u  IPv4   7005      0t0  TCP *:22 (LISTEN)
+sshd      2549            root    4u  IPv4  18954      0t0  TCP 10.24.82.219:22->10.24.82.30:55952 (ESTABLISHED)
+sshd      2648           senac    4u  IPv4  18954      0t0  TCP 10.24.82.219:22->10.24.82.30:55952 (ESTABLISHED)
+---
+
